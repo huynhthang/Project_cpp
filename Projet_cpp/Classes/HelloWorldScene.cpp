@@ -64,9 +64,6 @@ bool HelloWorld::init()
             this,
             menu_selector(HelloWorld::next));
         CC_BREAK_IF(! pStartItem);
-		CCBlink* startBlink = CCBlink::create(100,100);
-		CCRepeatForever* repeatBlink = CCRepeatForever::create(startBlink);
-		pStartItem->runAction(repeatBlink);
 
         // Place the menu item bottom-right conner.
         pStartItem->setPosition(ccp(size.width / 2, size.height / 3));
@@ -237,89 +234,6 @@ void HelloWorld::ccTouchesBegan(CCSet* touches, CCEvent* event)
 	pos.x = location.x;
 	pos.y = location.y;
 }
-
-
-void HelloWorld::ccTouchesEnded(CCSet *touches, CCEvent *pEvent)
-{/*
-	CCTouch* touch = (CCTouch*)( touches->anyObject() );
-    CCPoint location = touch->getLocationInView();
-	CCAnimation* animation = CCAnimation::create();
-
-	if(fabs(pos.x - location.x) < 20 && fabs(pos.y - location.y) < 20)
-	{	
-		animation->setDelayPerUnit(0.05f);
-		animation->setRestoreOriginalFrame(true);
-		animation->addSpriteFrameWithFileName("ok4.png");
-		animation->addSpriteFrameWithFileName("ok5.png");
-		animation->addSpriteFrameWithFileName("ok6.png");
-		animation->addSpriteFrameWithFileName("ok7.png");
-		animation->addSpriteFrameWithFileName("ok8.png");
-		animation->addSpriteFrameWithFileName("ok9.png");
-		animation->addSpriteFrameWithFileName("ok10.png");
-		animation->addSpriteFrameWithFileName("ok11.png");
-		CCAnimate* animate = CCAnimate::create(animation);
-		CCRepeatForever* repeat = CCRepeatForever::create(animate);
-		player->stopAllActions();
-		player->runAction(repeat);
-	}
-	else if((pos.x - location.x > 0) && (fabs(pos.x - location.x) > fabs(pos.y - location.y)))
-	{
-		animation->setDelayPerUnit(0.05f);
-		animation->setRestoreOriginalFrame(true);
-		animation->addSpriteFrameWithFileName("speed0.png");
-		animation->addSpriteFrameWithFileName("speed1.png");
-		animation->addSpriteFrameWithFileName("speed2.png");
-		animation->addSpriteFrameWithFileName("speed3.png");
-		animation->addSpriteFrameWithFileName("speed4.png");
-		animation->addSpriteFrameWithFileName("speed5.png");
-		animation->addSpriteFrameWithFileName("speed6.png");
-		animation->addSpriteFrameWithFileName("speed7.png");
-		animation->addSpriteFrameWithFileName("speed8.png");
-		CCAnimate* animate = CCAnimate::create(animation);
-		CCRepeatForever* repeat = CCRepeatForever::create(animate);
-		player->stopAllActions();
-		player->runAction(repeat);
-	}
-	else if((pos.x - location.x < 0) && (fabs(pos.x - location.x) > fabs(pos.y - location.y)))
-	{
-		animation->setDelayPerUnit(0.03f);
-		animation->setRestoreOriginalFrame(true);
-		animation->addSpriteFrameWithFileName("speed9.png");
-		animation->addSpriteFrameWithFileName("speed10.png");
-		animation->addSpriteFrameWithFileName("speed11.png");
-		animation->addSpriteFrameWithFileName("speed12.png");
-		animation->addSpriteFrameWithFileName("speed13.png");
-		animation->addSpriteFrameWithFileName("speed14.png");
-		animation->addSpriteFrameWithFileName("speed15.png");
-		animation->addSpriteFrameWithFileName("speed16.png");
-		CCAnimate* animate = CCAnimate::create(animation);
-		CCRepeatForever* repeat = CCRepeatForever::create(animate);
-		player->stopAllActions();
-		player->runAction(repeat);
-	}
-	else if((pos.y - location.y > 0) && (fabs(pos.x - location.x) < fabs(pos.y - location.y)))
-	{
-		
-	}
-	else if((pos.y - location.y < 0) && (fabs(pos.x - location.x) < fabs(pos.y - location.y)))
-	{
-		animation->setDelayPerUnit(0.05f);
-		animation->setRestoreOriginalFrame(true);
-		animation->addSpriteFrameWithFileName("slash1.png");
-		animation->addSpriteFrameWithFileName("slash2.png");
-		animation->addSpriteFrameWithFileName("slash3.png");
-		animation->addSpriteFrameWithFileName("slash4.png");
-		CCAnimate* animate = CCAnimate::create(animation);
-		CCRepeatForever* repeat = CCRepeatForever::create(animate);
-		player->stopAllActions();
-		player->runAction(repeat);
-	}
-
-	
-
-*/
-}
-
 
 void HelloWorld::next(CCObject* pSender)
 {
